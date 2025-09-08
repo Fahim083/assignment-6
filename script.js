@@ -128,7 +128,7 @@ function showPlantModal(product) {
   div.className = "fixed inset-0 bg-[rgba(108,108,108,0.6)] flex items-center justify-center z-50";
 
   div.innerHTML = `
-    <div class="bg-white rounded-xl w-[500px] p-6 pb-10 space-y-3 relative">
+    <div class="bg-white rounded-xl w-[300px] md:w-[500px] p-6 pb-10 space-y-3 relative">
     <h2 class="text-2xl font-bold mb-2">${product?.name || 'Unknown'}</h2>
     <img src="${product?.image}"
     alt="Plant Image" 
