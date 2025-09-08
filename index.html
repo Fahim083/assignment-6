@@ -1,174 +1,195 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Green Tree</title>
-      <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-      <link rel="shortcut icon" href="./assets/hero-leaf1.png" type="image/x-icon">
-</head>
-<body>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link
+      rel="shortcut icon"
+      href="./assets/hero-leaf1.png"
+      type="image/x-icon"
+    />
+  </head>
+  <body>
     <header>
-        <navbar class="flex justify-between items-center p-4 bg-[rgb(21,128,61)] px-24 ">
-            <h2 class="font-bold text-white">Green Tree</h2>
-            <div class="flex gap-8 text-sm text-white font-semibold">
-                <p>About</p>
-                <p>Gallery</p>
-                <p>Plant a Tree</p>
-            </div>
-            <h3 class="text-[rgb(21,128,61)] px-4 py-2 rounded-3xl bg-[rgb(250,204,21)] text-center">Plant a Tree</h3>
-        </navbar>
-        <herobanner class="flex justify-center items-center gap-x-8 bg-[rgb(207,240,220)]">
-            <img src="./assets/hero-leaf1.png" class="h-[350px] w-[450px]" alt="">
-            <div class="text-center space-y-4">
-                <h1 class="text-4xl font-bold text-center">Plant a Tree, Grow a Future</h1>
-                <p class=" text-center">Join our mission to plant 1 million trees and make the Earth greener for future
-                    generations.</p>
-                <button class="text-[rgb(21,128,61)] px-4 py-2 rounded-3xl bg-[rgb(250,204,21)] text-center">Get Involved</button>
-            </div>
-            <img src="./assets/hero-leaf2.png" class="h-[350px] w-[450px]" alt="">
-
-        </herobanner>
+      <navbar
+        class="flex justify-between items-center p-4 bg-[rgb(21,128,61)] px-24"
+      >
+        <h2 class="font-bold text-white">Green Tree</h2>
+        <div class="flex gap-8 text-sm text-white font-semibold">
+          <p>About</p>
+          <p>Gallery</p>
+          <p>Plant a Tree</p>
+        </div>
+        <h3
+          class="text-[rgb(21,128,61)] px-4 py-2 rounded-3xl bg-[rgb(250,204,21)] text-center"
+        >
+          Plant a Tree
+        </h3>
+      </navbar>
+      <herobanner
+        class="flex justify-center items-center gap-x-8 bg-[rgb(207,240,220)]"
+      >
+        <img src="./assets/hero-leaf1.png" class="h-[350px] w-[450px]" alt="" />
+        <div class="text-center space-y-4">
+          <h1 class="text-4xl font-bold text-center">
+            Plant a Tree, Grow a Future
+          </h1>
+          <p class="text-center">
+            Join our mission to plant 1 million trees and make the Earth greener
+            for future generations.
+          </p>
+          <button
+            class="text-[rgb(21,128,61)] px-4 py-2 rounded-3xl bg-[rgb(250,204,21)] text-center"
+          >
+            Get Involved
+          </button>
+        </div>
+        <img src="./assets/hero-leaf2.png" class="h-[350px] w-[450px]" alt="" />
+      </herobanner>
     </header>
     <main class="p-24 pb-6 bg-[rgb(240,253,244)]">
-        <div class="tree-shop-container ">
-            <h1 class="text-center text-4xl font-semibold pb-8">Choose Your Trees</h1>
-            <div class="flex justify-between">
-                <div class="tree-categories w-[200px] border-2">
-                    <h3 class="text-lg font-semibold">Categories</h3>
-                    <div>                  
-                        <p>All Trees</p>
-                        <p>Fruit Trees</p>
-                        <p>Fruit Trees</p>
-                        <p>Fruit Trees</p>
-                        <p>Fruit Trees</p>
-                        <p>Fruit Trees</p>
-                    </div>
+      <div class="tree-shop-container">
+        <h1 class="text-center text-4xl font-semibold pb-8">
+          Choose Your Trees
+        </h1>
+        <div class="flex justify-between">
+          <div class="tree-categories w-[200px]">
+            <h3 class="text-lg font-semibold">Categories</h3>
+            <div>
+              <p
+                id="all-trees"
+                class="cursor-pointer px-2 py-1 rounded-md transition-colors hover:bg-[rgb(34,197,94)] hover:text-white font-semibold bg-[rgb(21,170,61)] text-white mt-2"
+              >
+                All trees
+              </p>
+              <div id="category-list" class="mt-2 space-y-1"></div>
+            </div>
+          </div>
+          <div class="tree-product w-[770px] grid grid-cols-3 gap-4 p-4 pt-0">
+            <!-- Product items will be dynamically inserted here -->
+          </div>
+          <div class="tree-cart w-[200px] bg-white p-3 rounded-xl">
+            <h1 class="text-xl font-semibold">Your Cart</h1>
+            <div>
+              <div
+                class="flex justify-between items-center py-2 px-3 bg-[rgb(240,253,244)] rounded-lg mt-4"
+              >
+                <div class="flex flex-col gap-1">
+                  <h4 class="font-medium">Mango Tree</h4>
+                  <p class="text-gray-500">500</p>
                 </div>
-                <div class="tree-product border-2 w-[770px] grid grid-cols-3 gap-4 p-4 ">
-                    <div class="tree-card bg-white p-3 rounded-xl space-y-3">
-                        <img src="./assets/hero-leaf1.png" class="w-[220px] h-[135px] object-cover rounded-lg" alt="">
-                        <h4 class="text-lg font-medium">Mongo Time</h4>
-                        <p class="h-18 overflow-auto text-ellipsis">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Hic doloremque earum Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium, nisi!</p>
-                        <div class="flex justify-between items-center">
-                            <p class="px-4 py-1 rounded-3xl bg-[rgb(220,252,231)] text-md text-[rgba(21,128,61)]">Full_time</p>
-                            <p>5</p>
-                        </div>
-                            <p class="bg-[rgb(21,128,31)] text-white rounded-3xl text-center font-medium text-md py-2">Add to cart</p>
-                     </div>    
-                    <div class="tree-card bg-white p-3 rounded-xl space-y-3">
-                        <img src="./assets/hero-leaf1.png" class="w-[220px] h-[135px] object-cover rounded-lg" alt="">
-                        <h4 class="text-lg font-medium">Mongo Time</h4>
-                        <p class="h-18 overflow-auto text-ellipsis">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Hic doloremque earum Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium, nisi!</p>
-                        <div class="flex justify-between items-center">
-                            <p class="px-4 py-1 rounded-3xl bg-[rgb(220,252,231)] text-md text-[rgba(21,128,61)]">Full_time</p>
-                            <p>5</p>
-                        </div>
-                            <p class="bg-[rgb(21,128,31)] text-white rounded-3xl text-center font-medium text-md py-2">Add to cart</p>
-                     </div>    
-                    <div class="tree-card bg-white p-3 rounded-xl space-y-3">
-                        <img src="./assets/hero-leaf1.png" class="w-[220px] h-[135px] object-cover rounded-lg" alt="">
-                        <h4 class="text-lg font-medium">Mongo Time</h4>
-                        <p class="h-18 overflow-auto text-ellipsis">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Hic doloremque earum Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium, nisi!</p>
-                        <div class="flex justify-between items-center">
-                            <p class="px-4 py-1 rounded-3xl bg-[rgb(220,252,231)] text-md text-[rgba(21,128,61)]">Full_time</p>
-                            <p>5</p>
-                        </div>
-                            <p class="bg-[rgb(21,128,31)] text-white rounded-3xl text-center font-medium text-md py-2">Add to cart</p>
-                     </div>    
-                    <div class="tree-card bg-white p-3 rounded-xl space-y-3">
-                        <img src="./assets/hero-leaf1.png" class="w-[220px] h-[135px] object-cover rounded-lg" alt="">
-                        <h4 class="text-lg font-medium">Mongo Time</h4>
-                        <p class="h-18 overflow-auto text-ellipsis">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Hic doloremque earum </p>
-                        <div class="flex justify-between items-center">
-                            <p class="px-4 py-1 rounded-3xl bg-[rgb(220,252,231)] text-md text-[rgba(21,128,61)]">Full_time</p>
-                            <p>5</p>
-                        </div>
-                            <p class="bg-[rgb(21,128,31)] text-white rounded-3xl text-center font-medium text-md py-2">Add to cart</p>
-                     </div>    
-                    
+                <div>x</div>
+              </div>
+            </div>
+            <div>
+              <div
+                class="flex justify-between items-center py-2 px-3 bg-[rgb(240,253,244)] rounded-lg mt-4"
+              >
+                <div class="flex flex-col gap-1">
+                  <h4 class="font-medium">Mango Tree</h4>
+                  <p class="text-gray-500">500</p>
                 </div>
-                <div class="tree-cart w-[200px] bg-white p-3 rounded-xl">
-                    <h1 class="text-xl font-semibold">Your Cart</h1>
-                    <div>
-                        <div class="flex justify-between items-center py-2 px-3 bg-[rgb(240,253,244)] rounded-lg mt-4">
-                            <div class="flex flex-col gap-1">
-                                <h4 class="font-medium">Mango Tree</h4>
-                               <p class="text-gray-500">500</p>
-                            </div>
-                            <div>x</div>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="flex justify-between items-center py-2 px-3 bg-[rgb(240,253,244)] rounded-lg mt-4">
-                            <div class="flex flex-col gap-1">
-                                <h4 class="font-medium">Mango Tree</h4>
-                               <p class="text-gray-500">500</p>
-                            </div>
-                            <div>x</div>
-                        </div>
-                    </div>
-                    
-                 </div>
-                </div>
+                <div>x</div>
+              </div>
+            </div>
+            <div class="flex justify-between font-semibold mt-4">
+              <p>Total :</p>
+              <p>3000</p>
+            </div>
+          </div>
         </div>
-        <div class="campain py-16">
-            <div class="campain-about mx-auto w-[750px]">
-                <h1 class="text-3xl font-bold text-center" >About the Campaign</h1>
-                <div class="flex gap-8 mt-8">
-                    <img src="./assets/about.png" class="h-96 w-96 object-cover" alt="">
-                    <div class="flex flex-col gap-10 justify-center items-center">
-                    <p class="text-md text-gray-500">Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus laboriosam impedit ipsum itaque repellat asperiores ut inventore laudantium aspernatur veritatis cumque nobis dicta, libero in esse dolorum obcaecati. Totam, ipsam.</p>
-                    <ul  class="list-inside list-disc text-md text-gray-500">
-                        <li>Over 1 million trees planted worldwide</li>
-                        <li>Community-driven initiatives</li>
-                        <li>Partnerships with local organizations</li>
-                        <li>Educational programs on sustainability</li>
-                    </ul>
-                    </div>
-                </div>
-
+      </div>
+      <div class="campain py-16">
+        <div class="campain-about mx-auto w-[750px]">
+          <h1 class="text-3xl font-bold text-center">About the Campaign</h1>
+          <div class="flex gap-8 mt-8">
+            <img
+              src="./assets/about.png"
+              class="h-96 w-96 object-cover"
+              alt=""
+            />
+            <div class="flex flex-col gap-10 justify-center items-center">
+              <p class="text-md text-gray-500">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Accusamus laboriosam impedit ipsum itaque repellat asperiores ut
+                inventore laudantium aspernatur veritatis cumque nobis dicta,
+                libero in esse dolorum obcaecati. Totam, ipsam.
+              </p>
+              <ul class="list-inside list-disc text-md text-gray-500">
+                <li>Over 1 million trees planted worldwide</li>
+                <li>Community-driven initiatives</li>
+                <li>Partnerships with local organizations</li>
+                <li>Educational programs on sustainability</li>
+              </ul>
             </div>
-            
+          </div>
         </div>
-        </main>
-        <footer>
-            <div class="impact bg-[rgb(207,240,220)] p-8 rounded-xl">
-                
-                <h1 class="text-3xl font-bold text-center py-8" >Our Impact</h1>
-                <div class="flex justify-center gap-16">
-                    <div class="text-center bg-white p-4 rounded-xl w-80">
-                        <h2 class="text-4xl font-bold text-[rgb(21,128,61)]">1M+</h2>
-                        <p class="text-gray-500">Trees Planted</p>
-                    </div>
-                    <div class="text-center bg-white p-4 rounded-xl w-80">
-                        <h2 class="text-4xl font-bold text-[rgb(21,128,61)]">500K+</h2>
-                        <p class="text-gray-500">Happy Donors</p>
-                    </div>
-                     <div class="text-center bg-white p-4 rounded-xl w-80">
-                        <h2 class="text-4xl font-bold text-[rgb(21,128,61)]">100+</h2>
-                        <p class="text-gray-500">Communities Reached</p>
-                    </div>
-                </div>
-            </div>
-            <div class="plant-tree bg-[rgb(21,128,61)] text-white text-center py-16 ">
-              <h2 class="text-4xl text-white font-bold text-center pb-10">Plant a Tree Today</h2>
-                <div>
-                    <div class="py-10 w-[500px] bg-[rgb(21,136,31)] space-y-3 rounded-lg shadow-lg mx-auto">
-                        <input type="text" placeholder="Enter your email" class="px-4 py-2 rounded-xl w-96 text-black bg-white"> <br>
-                        <input type="text" placeholder="Enter your email" class="px-4 py-2 rounded-xl w-96 text-black bg-white"> <br>
-                        <select name="" id="" class="px-4 py-2 rounded-xl w-96 text-black bg-white">
-                            <option value="">my Life my rule</option>
-                            <option value="">my Life my rule</option>
-                            <option value="">my Life my rule</option>
-                        </select> <br>
-                      <button class="bg-[rgb(250,204,21)] w-96 px-4 py-2 rounded-xl text-[rgb(21,128,31)]">Donate Now</button>
-                     </div>
-                </div>
-            </div>
-            <div class="rights bg-[rgba(20,83,45,1)] text-white">
-                <p class="text-md text-center t py-2">© 2024 Green Tree. All rights reserved.</p>
-            </div>
-        </footer>
-</body>
+      </div>
+    </main>
+    <footer>
+      <div class="impact bg-[rgb(207,240,220)] p-8 rounded-xl">
+        <h1 class="text-3xl font-bold text-center py-8">Our Impact</h1>
+        <div class="flex justify-center gap-16">
+          <div class="text-center bg-white p-4 rounded-xl w-80">
+            <h2 class="text-4xl font-bold text-[rgb(21,128,61)]">1M+</h2>
+            <p class="text-gray-500">Trees Planted</p>
+          </div>
+          <div class="text-center bg-white p-4 rounded-xl w-80">
+            <h2 class="text-4xl font-bold text-[rgb(21,128,61)]">500K+</h2>
+            <p class="text-gray-500">Happy Donors</p>
+          </div>
+          <div class="text-center bg-white p-4 rounded-xl w-80">
+            <h2 class="text-4xl font-bold text-[rgb(21,128,61)]">100+</h2>
+            <p class="text-gray-500">Communities Reached</p>
+          </div>
+        </div>
+      </div>
+      <div class="plant-tree bg-[rgb(21,128,61)] text-white text-center py-16">
+        <h2 class="text-4xl text-white font-bold text-center pb-10">
+          Plant a Tree Today
+        </h2>
+        <div>
+          <div
+            class="py-10 w-[500px] bg-[rgb(21,136,31)] space-y-3 rounded-lg shadow-lg mx-auto"
+          >
+            <input
+              type="text"
+              placeholder="Enter your email"
+              class="px-4 py-2 rounded-xl w-96 text-black bg-white"
+            />
+            <br />
+            <input
+              type="text"
+              placeholder="Enter your email"
+              class="px-4 py-2 rounded-xl w-96 text-black bg-white"
+            />
+            <br />
+            <select
+              name=""
+              id=""
+              class="px-4 py-2 rounded-xl w-96 text-black bg-white"
+            >
+              <option value="">Let Plants A tree</option>
+              <option value="">Let Plants two tree</option>
+              <option value="">Let Plants many tree</option>
+            </select>
+            <br />
+            <button
+              class="bg-[rgb(250,204,21)] w-96 px-4 py-2 rounded-xl text-[rgb(21,128,31)]"
+            >
+              Donate Now
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="rights bg-[rgba(20,83,45,1)] text-white">
+        <p class="text-md text-center t py-2">
+          © 2024 Green Tree. All rights reserved.
+        </p>
+      </div>
+    </footer>
+    <script src="./script.js" defer></script>
+  </body>
 </html>
