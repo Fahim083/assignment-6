@@ -133,6 +133,7 @@ const productGrid = document.querySelector(".tree-product");
 const body = document.querySelector("body");
 
 
+
 function setActive(element) {
   if (activeCategory) {
     activeCategory.classList.remove("text-white", "font-semibold", "bg-[rgb(21,170,61)]");
@@ -207,6 +208,8 @@ function renderProducts(products) {
       showPlantModal(product);
     }
     );
+    const addButton = div.querySelector("button");
+    addButton.addEventListener("click", () => addToCart(product));
     productGrid.appendChild(div);
   });
 }
@@ -252,18 +255,18 @@ function showPlantModal(product) {
 
   const div = document.createElement("div");
   div.id = "plant-modal";
-  div.className = "fixed inset-0 bg-[rgba(255,255,255,.2)] flex items-center justify-center z-50";
+  div.className = "fixed inset-0 bg-[rgba(108,108,108,0.6)] flex items-center justify-center z-50";
 
   div.innerHTML = `
-    <div class="bg-white rounded-xl w-96 p-6 relative">
-      <button id="modal-close" class="absolute top-2 right-2 text-gray-500 hover:text-gray-700">&times;</button>
-      <img src="${product?.image || 'https://via.placeholder.com/220x120'}" 
-           alt="Plant Image" 
-           class="w-full h-40 object-cover rounded-lg mb-4"/>
-      <h2 class="text-2xl font-bold mb-2">${product?.name || 'Unknown'}</h2>
-      <p class="text-gray-500 mb-1">Category: ${product?.type || 'N/A'}</p>
-      <p class="font-semibold mb-2">Price: ${product?.price || 'N/A'}</p>
-      <p class="text-gray-700">${product?.description || 'No description available'}</p>
+    <div class="bg-white rounded-xl w-[500px] p-6 pb-10 space-y-3 relative">
+    <h2 class="text-2xl font-bold mb-2">${product?.name || 'Unknown'}</h2>
+    <img src="${product?.image}" 
+    alt="Plant Image" 
+    class="w-full h-40 object-cover rounded-lg mb-4"/>
+    <p class="text-gray-500 mb-1">Category: ${product?.category || 'N/A'}</p>
+    <p class="font-semibold mb-2">Price: ${product?.price || 'N/A'}</p>
+    <p class="text-gray-700">${product?.description || 'No description available'}</p>
+    <button id="modal-close" class="absolute right-5 text-gray-500 hover:text-gray-700 hover:cursor-pointer">Close</button>
     </div>
   `;
 
@@ -278,64 +281,45 @@ function showPlantModal(product) {
   });
 }
 
-// function showPlantModal(product) {
-  
-//   const existing = document.getElementById("plant-modal");
-//   if (existing) existing.remove();
-
-//   const modal = document.createElement("div");
-//   modal.id = "plant-modal";
-//   modal.className = "fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50";
-
-//   // Modal content
-//   const content = document.createElement("div");
-//   content.className = "bg-white rounded-xl w-96 p-6 relative";
-
-  
-//   const closeBtn = document.createElement("button");
-//   closeBtn.innerHTML = "&times;";
-//   closeBtn.className = "absolute top-2 right-2 text-gray-500 hover:text-gray-700 text-2xl";
-//   closeBtn.addEventListener("click", () => modal.remove());
-
-  
-//   const img = document.createElement("img");
-//   img.src = product?.image || "https://via.placeholder.com/220x120";
-//   img.alt = "Plant Image";
-//   img.className = "w-full h-40 object-cover rounded-lg mb-4";
-
-//   const name = document.createElement("h2");
-//   name.textContent = product?.name || "Unknown";
-//   name.className = "text-2xl font-bold mb-2";
-
-  
-//   const category = document.createElement("p");
-//   category.textContent = `Category: ${product?.type || "N/A"}`;
-//   category.className = "text-gray-500 mb-1";
+const cartItems = document.getElementById("cart-items");
+const cartTotal = document.getElementById("cart-total");
 
 
-//   const price = document.createElement("p");
-//   price.textContent = `Price: ${product?.price || "N/A"}`;
-//   price.className = "font-semibold mb-2";
+let cart = [];
+
+function addToCart(product) {
+  cart.push(product);
+  renderCart();
+}
+
+function removeFromCart(index) {
+  cart.splice(index, 1);
+  renderCart();
+}
+
+function renderCart() {
+  cartItems.innerHTML = "";
+  cart.forEach((product, index) => {
+    const div = document.createElement("div");
+    div.className = "flex justify-between items-center py-2 px-3 bg-[rgb(240,253,244)] rounded-lg mt-4";
+
+    div.innerHTML = `
+      <div class="flex flex-col gap-1">
+        <h4 class="font-medium">${product.name}</h4>
+        <p class="text-gray-500">$ ${product.price}</p>
+      </div>
+      <div class="cursor-pointer text-red-500 font-bold">❌</div>
+    `;
+
+    div.querySelector("div:last-child").addEventListener("click", () => removeFromCart(index));
+
+    cartItems.appendChild(div);
+  });
+
+ 
+  const total = cart.reduce((sum, item) => sum + Number(item.price || 0), 0);
+  cartTotal.textContent = "$ " + total;
+}
 
 
-//   const desc = document.createElement("p");
-//   desc.textContent = product?.description || "No description available";
-//   desc.className = "text-gray-700";
 
-  
-//   content.appendChild(closeBtn);
-//   content.appendChild(img);
-//   content.appendChild(name);
-//   content.appendChild(category);
-//   content.appendChild(price);
-//   content.appendChild(desc);
-
-//   modal.appendChild(content);
-
-
-//   modal.addEventListener("click", (e) => {
-//     if (e.target === modal) modal.remove();
-//   });
-
-//   document.body.appendChild(modal);
-// }
