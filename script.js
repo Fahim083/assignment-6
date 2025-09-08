@@ -1,138 +1,8 @@
-// const categoryList = document.getElementById("category-list");
-// const allTrees = document.getElementById("all-trees");
-// let activeCategory = allTrees; // Default active = All trees
-// const productGrid = document.querySelector(".tree-product");
-
-// function setActive(element) {
-//   // Remove red from currently active
-//   if (activeCategory) {
-//     activeCategory.classList.remove("text-white", "font-semibold","bg-[rgb(21,170,61)]","text-white");
-//   }
-
-//   // Add red to the clicked element
-//   element.classList.add("text-white", "font-semibold","bg-[rgb(21,170,61)]","text-white");
-//   activeCategory = element;
-// }
-
-
-
-// // Load categories from API
-// async function loadCategories() {
-  
-//   categoryList.innerHTML = `<p class="text-gray-500 italic">Loading...</p>`;
-
-//   try {
-//     const response = await fetch("https://openapi.programming-hero.com/api/categories")
-//     const categories =await response.json().then(data => data.categories)
-
-//     categoryList.innerHTML = "";
-
-//     categories.forEach(category => {
-//       const p = document.createElement("p");
-//       p.textContent = category.category_name || "Unknown";
-
-//       // Base + hover styles
-//       p.className =
-//         "cursor-pointer px-2 py-1 rounded-md transition-colors hover:bg-[rgb(34,197,94)] hover:text-white";
-
-//       // On click → set as active
-//       p.addEventListener("click", () => {
-//         setActive(p);
-//         console.log(`Category clicked: ${category.category_name}`);
-//         fetchProductsByCategory(category.id);
-//       });
-
-//       categoryList.appendChild(p);
-//     });
-//   } catch (error) {
-//     console.error("Error loading categories:", error);
-//     categoryList.innerHTML = `<p class="text-red-500">Failed to load categories</p>`;
-//   }
-// }
-
-// // Handle "All trees" click
-// allTrees.addEventListener("click", () => {
-//   setActive(allTrees);
-//   console.log("All trees clicked");
-// });
-
-// // Run it
-// loadCategories();
-
-// function renderProducts(products) {
-//   productGrid.innerHTML = ""; // clear old products
-
-//   if (!products || products.length === 0) {
-//     productGrid.innerHTML = `<p class="col-span-3 text-center text-gray-500">No products found</p>`;
-//     return;
-//   }
-
-//   products.forEach(product => {
-//     const div = document.createElement("div");
-//     div.className = "tree-card bg-white p-3 rounded-xl space-y-3 shadow";
-
-//     div.innerHTML = `
-//       <img src="${product.image}" class="w-full h-[120px] object-cover rounded-lg" alt="">
-//       <h4 class="text-lg font-medium">${product.name}</h4>
-//       <p class="line-clamp-3 text-gray-700">${product.description}</p>
-//       <div class="flex justify-between items-center">
-//         <p class="px-4 py-1 rounded-3xl bg-green-100 text-green-700 text-sm">${product.type}</p>
-//         <p class="font-medium">${product.price}</p>
-//       </div>
-//       <button class="w-full bg-green-700 text-white rounded-3xl font-medium text-md py-2 hover:bg-green-800">Add to cart</button>
-//     `;
-
-//     productGrid.appendChild(div);
-//   });
-// }
-
-// async function loadAllTrees() {
-//   setActive(allTrees);
-//   showProductLoading();
-//   // categoryList.innerHTML = `<p class="text-gray-500 italic">Loading...</p>`;
-
-//   try {
-//     const response = await fetch("https://openapi.programming-hero.com/api/plants");
-//     const products = await response.json().then(data => data.plants);
-//     console.log(products);
-//     renderProducts(products);
-//   } catch (error) {
-//     console.error("Error loading all trees:", error);
-//     productGrid.innerHTML = `<p class="text-red-500">Failed to load products</p>`;
-//   }
-// }
-
-
-// async function fetchProductsByCategory(id) {
-//   showProductLoading();
-//   try {
-//     const response = await fetch(`https://openapi.programming-hero.com/api/category/${id}`);
-//     const products = await response.json().then(data => data.plants);
-//     console.log(products);
-//     renderProducts(products);
-//   } catch (error) {
-//     console.error("Error fetching products:", error);
-//     productGrid.innerHTML = `<p class="text-red-500">Failed to load products</p>`;
-//   }
-// }
-
-// function showCategoryLoading() {
-//   categoryList.innerHTML = `
-//     <p class="text-gray-500 italic">Loading categories...</p>
-//   `;
-// }
-
-// allTrees.addEventListener("click", loadAllTrees);
-// loadAllTrees(); // show all trees by default
-
-
 const categoryList = document.getElementById("category-list");
 const allTrees = document.getElementById("all-trees");
 let activeCategory = allTrees; // Default active = All trees
 const productGrid = document.querySelector(".tree-product");
 const body = document.querySelector("body");
-
-
 
 function setActive(element) {
   if (activeCategory) {
@@ -290,6 +160,7 @@ let cart = [];
 function addToCart(product) {
   cart.push(product);
   renderCart();
+  alert(`${product.name} added to cart!`);
 }
 
 function removeFromCart(index) {
@@ -301,7 +172,7 @@ function renderCart() {
   cartItems.innerHTML = "";
   cart.forEach((product, index) => {
     const div = document.createElement("div");
-    div.className = "flex justify-between items-center py-2 px-3 bg-[rgb(240,253,244)] rounded-lg mt-4";
+    div.className = "flex justify-between items-center py-2 px-3 bg-[rgba(220,252,231,1)] rounded-lg mt-4";
 
     div.innerHTML = `
       <div class="flex flex-col gap-1">
@@ -316,7 +187,6 @@ function renderCart() {
     cartItems.appendChild(div);
   });
 
- 
   const total = cart.reduce((sum, item) => sum + Number(item.price || 0), 0);
   cartTotal.textContent = "$ " + total;
 }
