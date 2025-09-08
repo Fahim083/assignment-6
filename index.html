@@ -12,12 +12,12 @@
     />
   </head>
   <body>
-    <header>
+   <header>
       <navbar
-        class="flex justify-between items-center p-4 bg-[rgb(21,128,61)] px-24"
+        class="flex justify-between items-center p-4 bg-[rgb(21,128,61)] px-5 md:px-24"
       >
-        <h2 class="font-bold text-white">Green Tree</h2>
-        <div class="flex gap-8 text-sm text-white font-semibold">
+        <h2 class="font-semibold md:font-bold text-md md:text-lg text-white ">Green Tree</h2>
+        <div class="hidden md:flex gap-8 text-sm text-white font-semibold">
           <p>About</p>
           <p>Gallery</p>
           <p>Plant a Tree</p>
@@ -29,9 +29,9 @@
         </h3>
       </navbar>
       <herobanner
-        class="flex justify-center items-center gap-x-8 bg-[rgb(207,240,220)]"
+        class="flex flex-col md:flex-row justify-center items-center gap-x-8 space-y-4 md:space-y-0 bg-[rgb(207,240,220)]"
       >
-        <img src="./assets/hero-leaf1.png" class="h-[350px] w-[450px]" alt="" />
+        <img src="./assets/hero-leaf1.png" class=" h-[350px] w-[450px]" alt="" />
         <div class="text-center space-y-4">
           <h1 class="text-4xl font-bold text-center">
             Plant a Tree, Grow a Future
@@ -68,39 +68,8 @@
             </div>
           </div>
           <div class="tree-product w-[770px] grid grid-cols-3 gap-4 p-4 pt-0">
-            <!-- Product items will be dynamically inserted here -->
+           
           </div>
-          <!-- <div class="tree-cart w-[200px] bg-white p-3 rounded-xl">
-
-            <h1 class="text-xl font-semibold">Your Cart</h1>
-            <div>
-              <div
-                class="flex justify-between items-center py-2 px-3 bg-[rgb(240,253,244)] rounded-lg mt-4"
-              >
-                <div class="flex flex-col gap-1">
-                  <h4 class="font-medium">Mango Tree</h4>
-                  <p class="text-gray-500">500</p>
-                </div>
-                <div>x</div>
-              </div>
-            </div>
-            <div>
-              <div
-                class="flex justify-between items-center py-2 px-3 bg-[rgb(240,253,244)] rounded-lg mt-4"
-              >
-                <div class="flex flex-col gap-1">
-                  <h4 class="font-medium">Mango Tree</h4>
-                  <p class="text-gray-500">500</p>
-                </div>
-                <div>x</div>
-              </div>
-            </div>
-            <div class="flex justify-between font-semibold mt-4">
-              <p>Total :</p>
-              <p>3000</p>
-            </div>
-          </div> -->
-
           <div class="tree-cart w-[200px] bg-white p-3 rounded-xl">
   <h1 class="text-xl font-semibold">Your Cart</h1>
   <div id="cart-items"></div>

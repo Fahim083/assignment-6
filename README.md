@@ -13,7 +13,7 @@
 #### What are arrow functions in ES6?
  - Arrow functions are a shorter, cleaner syntax for writing functions in JavaScript, introduced in ES6.we can not use this in arrow function.
 
- #### How does destructuring assignment work in ES6?
+ #### How does destructurind assignment work in ES6?
   - Destructuring assignment is a way to unpacking the  values from arrays or objects or array into separate variables or a new objects or new array in a clean, concise way.
 
 #### Explain template literals in ES6. How are they different from string concatenation?

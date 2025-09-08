@@ -58,7 +58,7 @@ function renderProducts(products) {
   products.forEach(product => {
     console.log(product?.image);
     const div = document.createElement("div");
-    div.className = "tree-card bg-white p-3 rounded-xl space-y-3 shadow";
+    div.className = "tree-card bg-white p-3 rounded-xl h-[365px] space-y-3 shadow";
 
     div.innerHTML = `
      <img src="${product.image}"
@@ -130,7 +130,7 @@ function showPlantModal(product) {
   div.innerHTML = `
     <div class="bg-white rounded-xl w-[500px] p-6 pb-10 space-y-3 relative">
     <h2 class="text-2xl font-bold mb-2">${product?.name || 'Unknown'}</h2>
-    <img src="${product?.image}" 
+    <img src="${product?.image}"
     alt="Plant Image" 
     class="w-full h-40 object-cover rounded-lg mb-4"/>
     <p class="text-gray-500 mb-1">Category: ${product?.category || 'N/A'}</p>
